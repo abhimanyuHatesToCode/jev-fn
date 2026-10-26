@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jev-fn"
+version = "0.1.1"
+description = "A small Python wrapper for TypeSafe's Jev semantic scoring function"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Abhii", email = "abhimanyugusain94@gmail.com" }]
+keywords = ["jev", "typesafe", "semantic-evaluation", "classification", "ai"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = ["typesafe-sdk"]
+
+[project.urls]
+Repository = "https://github.com/abhimanyugusain94/jev-fn"
+Issues     = "https://github.com/abhimanyugusain94/jev-fn/issues"
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "pytest>=8.0", "pytest-asyncio>=0.24", "twine>=6.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jev_fn"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
